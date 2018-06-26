@@ -17,6 +17,8 @@ import com.thinkxfactor.zomatoplus.models.Restaurant;
 	@RequestMapping("/restaurant")
 	public class RestaurantController {
 		
+		public Restaurant ResObj;
+	
 		@PostMapping("/create")
 		public Restaurant Details(@RequestBody Restaurant res) {
 			Restaurant rs1 = new Restaurant();
@@ -24,6 +26,7 @@ import com.thinkxfactor.zomatoplus.models.Restaurant;
 			rs1.setResAdd(res.getResAdd());
 			rs1.setResCon(res.getResCon());
 			rs1.setResRat(res.getResRat());
+			ResObj = rs1;
 			return rs1;
 		}
 		
@@ -35,6 +38,7 @@ import com.thinkxfactor.zomatoplus.models.Restaurant;
 			rs2.setResAdd(ResAdd);
 			rs2.setResCon(ResCon);
 			rs2.setResRat(ResRat);
+			ResList.add(rs2);
 			ResList.add(rs2);
 			return ResList;			
 		}
