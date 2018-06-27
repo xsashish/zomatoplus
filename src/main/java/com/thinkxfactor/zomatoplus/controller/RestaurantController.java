@@ -43,10 +43,14 @@ import com.thinkxfactor.zomatoplus.repository.RestaurantRepository;
 			
 		@PostMapping("/addItems")
 		public Item AddItem(@RequestBody Item item) {
-			Item it1 = itemRepository.save(item);
-			return it1;
-	}
-	
+			Restaurant rep = restaurantRepository.findById(item.getRestaurantId());
+			if(rep != null) {
+				Item it1 = itemRepository.save(item);
+				return it1; 
+			}
+			else
+				return null;
+		}
 
 
 

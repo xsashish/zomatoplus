@@ -13,8 +13,8 @@ import com.thinkxfactor.zomatoplus.models.User;
 import com.thinkxfactor.zomatoplus.repository.UserRepository;
 
 
-@RestController
-@RequestMapping("/user")
+@RestController	//RestfulControllers
+@RequestMapping("/user")	//ClassLevel
 public class UserController {
 //	@PostMapping("/create")
 //	User usr_reg(@RequestBody User user){
@@ -30,7 +30,7 @@ public class UserController {
 	
 	
 	
-	@PostMapping("/add")
+	@PostMapping("/add")	//MethodLevel
 	public User addUser(@RequestBody User user) {
 		User persistedUser = userRepository.save(user);
 		return persistedUser;
