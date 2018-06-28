@@ -34,7 +34,7 @@ import com.thinkxfactor.zomatoplus.repository.RestaurantRepository;
 			Restaurant rs1 = restaurantRepository.save(res);
 			return rs1;
 		}
-//		
+		
 		@GetMapping("/getAll")
 		public List<Restaurant> getall() {
 			List<Restaurant> listofrestaurants = restaurantRepository.findAll();
@@ -51,8 +51,12 @@ import com.thinkxfactor.zomatoplus.repository.RestaurantRepository;
 			else
 				return null;
 		}
-
-
+		
+		@GetMapping("/getItem")
+		public List<Item> getItem() {
+			List<Item> listofitems = itemRepository.findAll();
+			return listofitems;			
+		}
 
 }
 
