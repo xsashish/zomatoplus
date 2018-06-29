@@ -6,5 +6,5 @@ import com.thinkxfactor.zomatoplus.models.Restaurant;
 import com.thinkxfactor.zomatoplus.models.User;
 
 public interface RestaurantRepository extends JpaRepository<Restaurant, Long> {
-	Restaurant findById(long id);
+	Restaurant findById(long string);
 }

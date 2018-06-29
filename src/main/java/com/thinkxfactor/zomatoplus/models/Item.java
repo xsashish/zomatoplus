@@ -24,7 +24,7 @@ public class Item implements Serializable {
 	private String name;
 	
 	@Column(name="price")
-	private Double price;
+	private long price;
 	
 	@Column(name="description")
 	private String description;
@@ -57,11 +57,11 @@ public class Item implements Serializable {
 		this.name = name;
 	}
 
-	public Double getPrice() {
+	public long getPrice() {
 		return price;
 	}
 
-	public void setPrice(Double price) {
+	public void setPrice(long price) {
 		this.price = price;
 	}
 
