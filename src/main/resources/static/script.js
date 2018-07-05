@@ -6,7 +6,7 @@ app.config([ '$routeProvider', function($routeProvider) {
 		templateUrl : 'home.html'
 	});
 	$routeProvider.when('/restaurants', {
-		templateUrl : 'restaurant.html',
+		templateUrl : 'link1.html',
 		controller : 'restaurantCtrl'
 	});
 	$routeProvider.when('/items', {
@@ -21,6 +21,14 @@ app.config([ '$routeProvider', function($routeProvider) {
 		templateUrl : 'login.html',
 		controller : 'loginCtrl'
 	});
+	$routeProvider.when('/addRestaurants',{
+		templateUrl : 'restaurant.html',
+		controller : 'restaurantCtrl'
+	});
+	$routeProvider.when('/viewRestaurants',{
+		templateUrl : 'link2.html',
+		controller : 'restaurantCtrl'
+	});
 	$routeProvider.otherwise({
 		redirectTo : '/home'
 	});
@@ -34,8 +42,15 @@ app.controller("restaurantCtrl", function($scope, $http) {
 			url : 'http://localhost:8080/restaurant/getAll'
 		}).success(function(data, status) {
 			console.log(data);
-			$scope.status = status;
-			$scope.restaurants = data;
+			if(data) {
+				$scope.status = status;
+				$scope.restaurants = data;
+			}
+			else {
+				document.getElementById("demo").innerHTML =
+					"NO RECORDS YET"
+			}
+			
 		}).error(function(data, status) {
 			$scope.status = status;
 			$scope.data = "Request failed";
@@ -53,6 +68,7 @@ app.controller("restaurantCtrl", function($scope, $http) {
 			console.log(data);
 			$scope.fetchRestaurant();
 			$scope.restaurants = data;
+			alert("Restaurant Details Saved!");
 		}).error(function(data, status) {
 			$scope.status = status;
 			$scope.data = "Request failed";

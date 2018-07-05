@@ -6,20 +6,23 @@
 <script data-require="bootstrap@*" data-semver="3.3.5" src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 <script data-require="angular.js@1.4.3" data-semver="1.4.3" src="https://code.angularjs.org/1.4.3/angular.js"></script>
 <script data-require="angular-route@*" data-semver="1.4.3" src="https://code.angularjs.org/1.4.3/angular-route.js"></script>
-<link rel="stylesheet" href="style.css" />
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="style1.css" />
 <script src="script.js"></script>
+<script src="script2.js"></script>
 </head>
 
 <body id="body" class="container">
 	<br />
+	<div class="w3-container w3-teal">
 	<ul class="nav nav-tabs">
-		<li data-toggle="tab"><a href="#/home">Home</a></li>
-		<li><a href="#/restaurants" data-toggle="tab">Restaurants</a></li>
-		<li><a href="#/items" data-toggle="tab">Items</a></li>
-		<li><a href="#/users" data-toggle="tab">Users</a></li>
-		<li><a href="#/userLogin" data-toggle="tab">LogIn</a></li>
+		<li data-toggle="tab"><a href="#/home" class="w3-hover-yellow">Home</a></li>
+		<li><a href="#/restaurants" data-toggle="tab" class="w3-hover-yellow">Restaurants</a></li>
+		<li><a href="#/items" data-toggle="tab" class="w3-hover-yellow">Items</a></li>
+		<li><a href="#/users" data-toggle="tab" class="w3-hover-yellow">Users</a></li>
+		<li><a href="#/userLogin" data-toggle="tab" class="w3-hover-yellow">LogIn</a></li>
 	</ul>
-
+	</div>
 	<div id="centered" ng-view></div>
 
 </body>
